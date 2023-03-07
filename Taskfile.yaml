@@ -1,0 +1,23 @@
+version: 3
+tasks:
+  run:application:
+    cmds:
+      - pnpm run start application
+    silent: true
+  run:consume:
+    cmds:
+      - pnpm run start consume
+    silent: true
+  run:publisher:
+    cmds:
+      - pnpm run start publisher
+    silent: true
+  health:
+    cmds:
+      - echo "Application"
+      - curl -s http://localhost:8000 | jq
+      - echo "Consume"
+      - curl -s http://localhost:8001 | jq
+      - echo "Publish"
+      - curl -s http://localhost:8002 | jq
+    silent: true

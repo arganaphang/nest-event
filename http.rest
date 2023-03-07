@@ -1,0 +1,7 @@
+### Publish
+POST http://localhost:8002/produce
+Content-Type: application/json
+
+{
+    "message": "Hello Arga He"
+}
